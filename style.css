@@ -1,0 +1,70 @@
+/* One stylesheet for the whole site: a reading column, light and dark. */
+:root {
+    --bg: #f5f6f4;
+    --surface: #ffffff;
+    --ink: #1c211f;
+    --muted: #5b625f;
+    --line: #dde1de;
+    --accent: #2f6b55;
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #141816;
+        --surface: #1c211f;
+        --ink: #e7ebe8;
+        --muted: #a2aaa6;
+        --line: #2e3532;
+        --accent: #7fc3a7;
+        color-scheme: dark;
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+}
+
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+h2 { font-size: 1.3rem; margin: 2.2rem 0 0.6rem; }
+h3 { font-size: 1.05rem; margin: 1.4rem 0 0.4rem; }
+p, ul { margin: 0 0 1rem; }
+li { margin-bottom: 0.35rem; }
+a { color: var(--accent); }
+
+.lede { color: var(--muted); font-size: 1.05rem; }
+.updated { color: var(--muted); font-size: 0.9rem; }
+
+.apps { display: grid; gap: 1rem; margin-top: 2rem; }
+
+.app {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+}
+
+.app h2 { margin: 0 0 0.3rem; font-size: 1.2rem; }
+.app p { margin: 0 0 0.6rem; color: var(--muted); }
+
+.back { display: inline-block; margin-bottom: 1.5rem; }
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
